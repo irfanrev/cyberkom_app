@@ -36,15 +36,20 @@ class _MainHomePageState extends State<MainHomePage> {
               },
               items: [
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: Container(
+                      margin: EdgeInsets.only(top: 8), child: Icon(Icons.home)),
                   label: '',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.comment),
+                  icon: Container(
+                      margin: EdgeInsets.only(top: 8),
+                      child: Icon(Icons.comment)),
                   label: '',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
+                  icon: Container(
+                      margin: EdgeInsets.only(top: 8),
+                      child: Icon(Icons.person)),
                   label: '',
                 ),
               ]),
