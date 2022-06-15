@@ -165,6 +165,31 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget titleNews() {
+      return Container(
+        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Berita Terbaru',
+              style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 16.0,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            Text(
+              'Lihat Semua',
+              style: GoogleFonts.poppins(
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: Color(0xff0C1141),
       body: ListView(
@@ -172,6 +197,9 @@ class HomePage extends StatelessWidget {
           header(),
           contentSlider(),
           mainMenu(),
+          titleNews(),
+          contentSlider(),
+          contentSlider(),
         ],
       ),
     );

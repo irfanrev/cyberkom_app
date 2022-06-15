@@ -23,6 +23,8 @@ class _MainHomePageState extends State<MainHomePage> {
         ),
         child: BottomAppBar(
           shape: CircularNotchedRectangle(),
+          notchMargin: 13.0,
+          clipBehavior: Clip.antiAlias,
           child: BottomNavigationBar(
               backgroundColor: Color.fromARGB(255, 40, 40, 40),
               selectedItemColor: Colors.indigo,
@@ -37,23 +39,26 @@ class _MainHomePageState extends State<MainHomePage> {
               items: [
                 BottomNavigationBarItem(
                   icon: Container(
-                      margin: EdgeInsets.only(top: 8), child: Icon(Icons.home)),
+                      margin: EdgeInsets.only(top: 8, right: 26),
+                      child: Icon(Icons.home)),
                   label: '',
                 ),
                 BottomNavigationBarItem(
                   icon: Container(
-                      margin: EdgeInsets.only(top: 8),
-                      child: Icon(Icons.comment)),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Container(
-                      margin: EdgeInsets.only(top: 8),
+                      margin: EdgeInsets.only(top: 8, left: 26),
                       child: Icon(Icons.person)),
                   label: '',
                 ),
               ]),
         ),
+      );
+    }
+
+    Widget btnChats() {
+      return FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.comment),
+        backgroundColor: Colors.amber[500],
       );
     }
 
@@ -63,9 +68,6 @@ class _MainHomePageState extends State<MainHomePage> {
           return HomePage();
           break;
         case 1:
-          return ChatHomePage();
-          break;
-        case 2:
           return ProfileHomePage();
           break;
         default:
@@ -74,6 +76,8 @@ class _MainHomePageState extends State<MainHomePage> {
 
     return Scaffold(
       backgroundColor: Color(0xff0C1141),
+      floatingActionButton: btnChats(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: customNavbar(),
       body: body(),
     );
