@@ -1,30 +1,23 @@
 import 'dart:async';
 
+import 'package:cyberkom_app/pages/home/main_home.dart';
 import 'package:cyberkom_app/theme.dart';
-import 'package:cyberkom_app/utils/splash_logo.dart';
 import 'package:flutter/material.dart';
+import 'package:get/instance_manager.dart';
 import 'package:get/get.dart';
 
-class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key}) : super(key: key);
+class SplashLogo extends StatefulWidget {
+  const SplashLogo({Key? key}) : super(key: key);
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  State<SplashLogo> createState() => _SplashLogoState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashLogoState extends State<SplashLogo> {
   @override
   void initState() {
-    Timer(
-      Duration(seconds: 3),
-      () => Get.to(
-        SplashLogo(),
-        transition: Transition.zoom,
-        duration: Duration(
-          seconds: 1,
-        ),
-      ),
-    );
+    Timer(Duration(seconds: 3),
+        () => Navigator.pushReplacementNamed(context, '/main'));
     super.initState();
   }
 
@@ -38,7 +31,7 @@ class _SplashPageState extends State<SplashPage> {
           height: 200,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/img/cyberkom.png'),
+              image: AssetImage('assets/img/logopmii.png'),
             ),
           ),
         ),

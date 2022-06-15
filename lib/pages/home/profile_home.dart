@@ -102,7 +102,8 @@ class ProfileHomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () =>
+                        Navigator.pushReplacementNamed(context, '/login'),
                     child: Container(
                       width: 200,
                       height: 40,
