@@ -1,3 +1,4 @@
+import 'package:cyberkom_app/pages/database/main_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,7 +44,7 @@ class HomePage extends StatelessWidget {
         height: 150,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.white,
+            color: Colors.lightBlue[500],
             boxShadow: [
               BoxShadow(
                 color: Colors.grey,
@@ -51,6 +52,29 @@ class HomePage extends StatelessWidget {
                 blurRadius: 6.0,
               )
             ]),
+        child: Row(
+          children: [
+            Expanded(
+              child: Container(
+                child: Column(
+                  children: [
+                    Text('PMII Rayon Cyberkom'),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/img/logopmii.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
+          ],
+        ),
       );
     }
 
@@ -60,55 +84,62 @@ class HomePage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    image: DecorationImage(
-                      image: AssetImage('assets/img/info.png'),
-                      fit: BoxFit.cover,
+            InkWell(
+              onTap: () {},
+              child: Column(
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      image: DecorationImage(
+                        image: AssetImage('assets/img/info.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 6.0,
-                ),
-                Text(
-                  'Info',
-                  style: GoogleFonts.poppins(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
+                  const SizedBox(
+                    height: 6.0,
                   ),
-                ),
-              ],
+                  Text(
+                    'Info',
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            Column(
-              children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    image: DecorationImage(
-                      image: AssetImage('assets/img/database.png'),
-                      fit: BoxFit.cover,
+            InkWell(
+              onTap: () =>
+                  Get.to(DatabaseHome(), transition: Transition.cupertino),
+              child: Column(
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      image: DecorationImage(
+                        image: AssetImage('assets/img/database.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 6.0,
-                ),
-                Text(
-                  'Database',
-                  style: GoogleFonts.poppins(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
+                  const SizedBox(
+                    height: 6.0,
                   ),
-                ),
-              ],
+                  Text(
+                    'Database',
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
             ),
             Column(
               children: [
