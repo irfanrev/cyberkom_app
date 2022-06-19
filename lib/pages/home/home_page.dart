@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cyberkom_app/pages/database/main_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,26 +41,42 @@ class HomePage extends StatelessWidget {
 
     Widget contentSlider() {
       return Container(
-        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         width: Get.width,
         height: 150,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Colors.lightBlue[500],
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                spreadRadius: 1.0,
-                blurRadius: 6.0,
-              )
-            ]),
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.lightBlue[500],
+          gradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.lightBlue, Colors.indigo],
+          ),
+        ),
         child: Row(
           children: [
             Expanded(
               child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('PMII Rayon Cyberkom'),
+                    Text(
+                      'PMII Rayon Cyberkom',
+                      style: GoogleFonts.poppins(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'Aplikasi management organisasi rayon cyberkom',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -66,7 +84,7 @@ class HomePage extends StatelessWidget {
             Container(
               width: 100,
               height: 100,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/img/logopmii.png'),
                   fit: BoxFit.cover,
