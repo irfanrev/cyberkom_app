@@ -56,7 +56,7 @@ class _MainHomePageState extends State<MainHomePage> {
 
     Widget btnChats() {
       return FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => Navigator.pushNamed(context, '/chat-room'),
         child: Icon(Icons.comment),
         backgroundColor: Colors.amber[500],
       );
